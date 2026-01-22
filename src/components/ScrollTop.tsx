@@ -1,8 +1,9 @@
 import { Fade, useScrollTrigger } from "@mui/material";
 import Box from "@mui/material/Box";
+import type { ReactElement, MouseEvent } from "react";
 
 export interface ScrollTopProps {
-  children?: React.ReactElement<unknown>;
+  children?: ReactElement<any>;
 }
 
 export default function ScrollTop(props: ScrollTopProps) {
@@ -12,7 +13,7 @@ export default function ScrollTop(props: ScrollTopProps) {
     threshold: 50,
   });
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
     ).querySelector('#scroll-top-anchor');
