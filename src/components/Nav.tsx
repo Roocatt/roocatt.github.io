@@ -24,8 +24,8 @@ export default function Nav() {
                     </Typography>
                     <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {navItems.map((item) => (
-                            <Link to={item.link}>
-                                <Button key={item.name} sx={{color: '#fff'}}>
+                            <Link key={'link-' + item.name} to={item.link}>
+                                <Button key={'button-' + item.name} sx={{color: '#fff'}}>
                                     {item.name}
                                 </Button>
                             </Link>

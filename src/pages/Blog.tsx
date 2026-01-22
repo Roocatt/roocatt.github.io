@@ -1,48 +1,36 @@
-import { Container } from "@mui/material";
+import { Card, Stack, styled } from "@mui/material";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import BlogPostIndex from "../components/BlogPostIndex.tsx";
+import type { StyledComponent } from "@emotion/styled";
+import { Link } from "react-router-dom";
+
+const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
+    backgroundColor: theme.palette.secondary.main,
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: (theme.vars ?? theme).palette.text.secondary,
+}));
 
 export default function Blog() {
     return (<>
-            <Container maxWidth="sm">
-                <Box component="main" sx={{p: 3}}>
-                    <h1>Blog</h1>
-                    <Typography>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde
-                        fugit veniam eius, perspiciatis sunt? Corporis qui ducimus quibusdam,
-                        aliquam dolore excepturi quae. Distinctio enim at eligendi perferendis in
-                        cum quibusdam sed quae, accusantium et aperiam? Quod itaque exercitationem,
-                        at ab sequi qui modi delectus quia corrupti alias distinctio nostrum.
-                        Minima ex dolor modi inventore sapiente necessitatibus aliquam fuga et. Sed
-                        numquam quibusdam at officia sapiente porro maxime corrupti perspiciatis
-                        asperiores, exercitationem eius nostrum consequuntur iure aliquam itaque,
-                        assumenda et! Quibusdam temporibus beatae doloremque voluptatum doloribus
-                        soluta accusamus porro reprehenderit eos inventore facere, fugit, molestiae
-                        ab officiis illo voluptates recusandae. Vel dolor nobis eius, ratione atque
-                        soluta, aliquam fugit qui iste architecto perspiciatis. Nobis, voluptatem!
-                        Cumque, eligendi unde aliquid minus quis sit debitis obcaecati error,
-                        delectus quo eius exercitationem tempore. Delectus sapiente, provident
-                        corporis dolorum quibusdam aut beatae repellendus est labore quisquam
-                        praesentium repudiandae non vel laboriosam quo ab perferendis velit ipsa
-                        deleniti modi! Ipsam, illo quod. Nesciunt commodi nihil corrupti cum non
-                        fugiat praesentium doloremque architecto laborum aliquid. Quae, maxime
-                        recusandae? Eveniet dolore molestiae dicta blanditiis est expedita eius
-                        debitis cupiditate porro sed aspernatur quidem, repellat nihil quasi
-                        praesentium quia eos, quibusdam provident. Incidunt tempore vel placeat
-                        voluptate iure labore, repellendus beatae quia unde est aliquid dolor
-                        molestias libero. Reiciendis similique exercitationem consequatur, nobis
-                        placeat illo laudantium! Enim perferendis nulla soluta magni error,
-                        provident repellat similique cupiditate ipsam, et tempore cumque quod! Qui,
-                        iure suscipit tempora unde rerum autem saepe nisi vel cupiditate iusto.
-                        Illum, corrupti? Fugiat quidem accusantium nulla. Aliquid inventore commodi
-                        reprehenderit rerum reiciendis! Quidem alias repudiandae eaque eveniet
-                        cumque nihil aliquam in expedita, impedit quas ipsum nesciunt ipsa ullam
-                        consequuntur dignissimos numquam at nisi porro a, quaerat rem repellendus.
-                        Voluptates perspiciatis, in pariatur impedit, nam facilis libero dolorem
-                        dolores sunt inventore perferendis, aut sapiente modi nesciunt.
-                    </Typography>
-                </Box>
-            </Container>
+            <Box component="main" sx={{p: 3}}>
+                <h1>Blog</h1>
+                <Stack spacing={2}>
+                    {Object.entries(BlogPostIndex).map((postIndex) => {
+                        const [postId, post] = postIndex;
+                        return (
+                            <Link key={'blog-post-link-' + postId} to={'/blog-post/' + postId} style={{ textDecoration: 'none' }}>
+                            <BlogPostListItem key={post.title}>
+                                <h2>{post.title}</h2>
+                                <sub>{post.date}</sub>
+                                <p>{post.description}</p>
+                            </BlogPostListItem>
+                            </Link>
+                        );
+                    })}
+                </Stack>
+            </Box>
         </>
     )
 }

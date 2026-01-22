@@ -1,3 +1,4 @@
+/* This is a basic under development page. It is all static content. */
 export default function UnderDevelopmentApp() {
     return (
         <div>

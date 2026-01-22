@@ -4,7 +4,7 @@ import App from './App.tsx'
 import UnderDevelopmentApp from './UnderDevelopmentApp.tsx'
 import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
-import theme from "./theme.tsx";
+import theme from "./util/theme.tsx";
 
 /* Temporary condition to just render the actual page in development. */
 if (import.meta.env.DEV) {
