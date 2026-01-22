@@ -5,6 +5,10 @@ import UnderDevelopmentApp from './UnderDevelopmentApp.tsx'
 import { ThemeProvider } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./util/theme.tsx";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 /* Temporary condition to just render the actual page in development. */
 if (import.meta.env.DEV) {

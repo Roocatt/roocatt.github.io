@@ -4,7 +4,7 @@ export default function Copyright() {
     return (
         <Typography variant="body2" align="center"
                     sx={{
-                        color: 'text.secondary',
+                        color: 'primary.contrastText',
                     }}>
             {'Copyright © '}
             {new Date().getFullYear()}

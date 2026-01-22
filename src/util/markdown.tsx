@@ -3,8 +3,10 @@ const MarkdownLoader = async () => {
     const loadMarkdownFiles = async () => {
         const modules = import.meta.glob('/src/blog-posts/*.md', {query: '?raw'});
         for (const path in modules) {
+            let normalizedPath = path.replace(/\/src\/blog-posts\//, '')
+                .replace(/\.md$/, '');
             const mod: any = await modules[path]();
-            markdownFiles.set(path, mod.default);
+            markdownFiles.set(normalizedPath, mod.default);
         }
     };
     await loadMarkdownFiles();

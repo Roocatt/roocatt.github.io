@@ -9,7 +9,7 @@ const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
-    color: (theme.vars ?? theme).palette.text.secondary,
+    color: (theme.vars ?? theme).palette.secondary.contrastText,
 }));
 
 export default function Blog() {
