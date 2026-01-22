@@ -14,11 +14,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@fontsource/roboto": "^5.2.9",
     "@mui/icons-material": "^7.3.7",
     "@mui/material": "^7.3.7",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -31,8 +34,9 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
+    "jiti": "^2.6.1",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
+    "typescript-eslint": "^8.53.1",
     "vite": "^7.2.4"
   }
 }

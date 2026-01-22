@@ -1,6 +1,10 @@
+// @ts-ignore
 import js from '@eslint/js'
+// @ts-ignore
 import globals from 'globals'
+// @ts-ignore
 import reactHooks from 'eslint-plugin-react-hooks'
+// @ts-ignore
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
