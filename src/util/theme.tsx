@@ -29,6 +29,36 @@ const theme = createTheme({
         button: {
             fontWeight: 700,
         }
+    },
+    components: {
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: '#9013fe'
+                }
+            }
+        },
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#9013fe',
+                    '&:hover': {
+                        backgroundColor: '#fff',
+                        color: '#000'
+                    },
+                    '&:focus': {
+                        backgroundColor: '#d8649c'
+                    },
+                    '&:active': {
+                        backgroundColor: '#d8649c'
+                    },
+                    '&:selected': {
+                        backgroundColor: '#d8649c'
+                    },
+                    color: '#fff'
+                }
+            }
+        }
     }
 });
 

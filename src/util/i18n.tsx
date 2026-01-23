@@ -1,10 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Import translation resources (example structure)
 import translationEN from '../locales/en/translation.json';
 import translationSV from '../locales/sv/translation.json';
-import translationFR from '../locales/fr/translation.json';
 
 const resources = {
     en: {
@@ -12,9 +10,6 @@ const resources = {
     },
     sv: {
         translation: translationSV
-    },
-    fr: {
-        translation: translationFR
     }
 };
 
