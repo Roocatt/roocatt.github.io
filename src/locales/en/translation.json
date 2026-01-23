@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "lanuages": {
+    "en": "🇬🇧 English",
+    "sv": "🇸🇪 Svenska",
+    "fr": "🇫🇷 Français"
+  }
+}
