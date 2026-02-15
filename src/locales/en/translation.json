@@ -5,7 +5,18 @@
     "about": "About",
     "projects": "Projects"
   },
-  "lanuages": {
+  "page": {
+    "blog": {
+      "title": "My Blog"
+    },
+    "about": {
+      "title": "About Me"
+    },
+    "projects": {
+      "title": "Projects"
+    }
+  },
+  "languages": {
     "en": "🇬🇧 English",
     "sv": "🇸🇪 Svenska",
     "fr": "🇫🇷 Français"

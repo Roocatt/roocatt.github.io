@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import BlogPostIndex from "../components/BlogPostIndex.tsx";
 import type { StyledComponent } from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
     backgroundColor: theme.palette.secondary.main,
@@ -13,9 +14,11 @@ const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
 }));
 
 export default function Blog() {
+    const { t } = useTranslation();
+
     return (<>
             <Box component="main" sx={{p: 3}}>
-                <h1>Blog</h1>
+                <h1>{t('page.blog.title')}</h1>
                 <Stack spacing={2}>
                     {Object.entries(BlogPostIndex).map((postIndex) => {
                         const [postId, post] = postIndex;

@@ -4,5 +4,16 @@
     "blog": "Blogg",
     "about": "Om",
     "projects": "Projekt"
+  },
+  "page": {
+    "blog": {
+      "title": "Min Blogg"
+    },
+    "about": {
+      "title": "Om mig"
+    },
+    "projects": {
+      "title": "Projekt"
+    }
   }
 }

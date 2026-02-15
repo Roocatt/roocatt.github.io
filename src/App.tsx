@@ -1,4 +1,4 @@
-import Nav from "./components/Nav.tsx";
+import Nav from "./components/top-bar/Nav.tsx";
 import { Container, Fab, styled } from "@mui/material";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
@@ -7,7 +7,7 @@ import Projects from "./pages/Projects.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Footer from "./components/Footer.tsx";
+import Footer from "./components/bottom-bar/Footer.tsx";
 import ScrollTop from "./components/ScrollTop.tsx";
 
 const Offset = styled('div')(

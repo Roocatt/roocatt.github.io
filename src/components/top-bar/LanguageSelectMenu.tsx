@@ -1,6 +1,6 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
-import i18n from "../util/i18n";
+import i18n from "../../util/i18n.tsx";
 import { useTranslation } from "react-i18next";
 //import theme from "../util/theme.tsx";
 
@@ -10,7 +10,7 @@ interface LanguageSelectMenuProps {
 
 export default function LanguageSelectMenu({xs}: LanguageSelectMenuProps) {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const [selectedIndex, setSelectedIndex] = useState(1);
+    const [selectedIndex, setSelectedIndex] = useState(0);
     const open = Boolean(anchorEl);
 
     const {t} = useTranslation();
@@ -35,7 +35,7 @@ export default function LanguageSelectMenu({xs}: LanguageSelectMenuProps) {
 
     return (<>
         <Button key={'language-button'} sx={{color: '#fff', ...xs}}
-                onClick={handleClickListItem}>{t('lanuages.' + languageList[selectedIndex])}</Button>
+                onClick={handleClickListItem}>{t('languages.' + languageList[selectedIndex])}</Button>
         <Menu id="language-menu" anchorEl={anchorEl} open={open} onClose={handleClose} slotProps={{
             list: {
                 'aria-labelledby': 'lock-button',
@@ -47,7 +47,7 @@ export default function LanguageSelectMenu({xs}: LanguageSelectMenuProps) {
                     key={language}
                     selected={index === selectedIndex}
                     onClick={(event) => handleMenuItemClick(event, index)}>
-                    {t('lanuages.' + language)}
+                    {t('languages.' + language)}
                 </MenuItem>
             ))}
         </Menu>
