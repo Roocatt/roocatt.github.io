@@ -1,5 +1,5 @@
-import { Card, CardActions, CardContent, Grid, Menu, MenuItem } from "@mui/material";
-import { Link } from 'react-router-dom';
+import { Badge, Card, CardActions, CardContent, Grid, Menu, MenuItem } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import * as React from "react";
@@ -17,14 +17,15 @@ const GitHubButton = ({project}: { project: ProjectInfo }): (null | React.JSX.El
         return null;
     }
     return <>
-        <Button href={project.github} target="_blank" rel="noopener noreferrer">
-            <GitHubIcon/>&nbsp;GitHub
+        <Button href={project.github} target="_blank" rel="noopener noreferrer" variant='contained'>
+            <GitHubIcon/>&nbsp;&nbsp;GitHub
         </Button>
     </>;
 };
 
 const RelatedBlogPostsMenu = ({project}: { project: ProjectInfo }): null | React.JSX.Element => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const navigate = useNavigate();
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -35,15 +36,27 @@ const RelatedBlogPostsMenu = ({project}: { project: ProjectInfo }): null | React
     if (project.relatedBlogPosts === null || project.relatedBlogPosts.length === 0) {
         return null;
     }
+    const handleNavigate = (dest: string, cardId: string) => {
+        navigate(dest, {state: {projectCardId: cardId}});
+    };
     let idStr = toId(project.name);
     return <>
+
         <Button id={"project-related-blog-" + idStr}
+                variant={'contained'}
                 aria-controls={open ? 'project-related-blog-menu-' + idStr : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}>
-            <ArticleIcon/>&nbsp;Related Blog Posts
+            <Badge badgeContent={project.relatedBlogPosts?.length} color="secondary" anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+            }}>
+                <ArticleIcon/>
+            </Badge>
+            &nbsp;&nbsp;Related Blog Posts
         </Button>
+
         <Menu
             id={'project-related-blog-menu-' + idStr}
             aria-labelledby={"project-related-blog-" + idStr}
@@ -59,7 +72,11 @@ const RelatedBlogPostsMenu = ({project}: { project: ProjectInfo }): null | React
                 horizontal: 'left',
             }}>
             {project.relatedBlogPosts.map((post: string) => (
-                <MenuItem component={Link} to={'/blog-post/' + post} onClick={handleClose}>{BlogPostIndex[post].title}</MenuItem>
+                <MenuItem key={idStr + '-menu-item-' + post}
+                          onClick={() => {
+                              handleClose();
+                              handleNavigate('/blog-post/' + post, 'project-card-' + idStr);
+                          }}>{BlogPostIndex[post].title}</MenuItem>
             ))}
         </Menu>
     </>;
@@ -68,7 +85,7 @@ const RelatedBlogPostsMenu = ({project}: { project: ProjectInfo }): null | React
 export default function Project({project}: { project: ProjectInfo }) {
     return (<>
         <Grid size={{xs: 12, sm: 12, md: 6, lg: 6}}>
-            <Card>
+            <Card id={'project-card-' + toId(project.name)} elevation={3}>
                 <CardContent>
                     <Typography variant="h5" component="div">
                         {project.name}

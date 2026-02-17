@@ -9,6 +9,7 @@ import BlogPost from "./pages/BlogPost.tsx";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Footer from "./components/bottom-bar/Footer.tsx";
 import ScrollTop from "./components/ScrollTop.tsx";
+import Background from "./components/background.tsx";
 
 const Offset = styled('div')(
     ({theme}) => theme.mixins.toolbar
@@ -20,6 +21,7 @@ export default function App() {
             <BrowserRouter>
                 <Nav/>
                 <a id="scroll-top-anchor"/>
+                <Background/>
                 <Container sx={{minHeight: '100vh'}}>
                     <Offset/>
                     <Container maxWidth="md" sx={{flexGrow: 1}}>

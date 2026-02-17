@@ -16,6 +16,11 @@
       "title": "Projects"
     }
   },
+  "components": {
+    "backToProjects":{
+      "back": "Go Back"
+    }
+  },
   "languages": {
     "en": "🇬🇧 English",
     "sv": "🇸🇪 Svenska",

@@ -15,5 +15,10 @@
     "projects": {
       "title": "Projekt"
     }
+  },
+  "components": {
+    "backToProjects":{
+      "back": "Tillbaka"
+    }
   }
 }

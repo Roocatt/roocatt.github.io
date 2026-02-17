@@ -1,12 +1,15 @@
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import BlogPostIndex, { type BlogPostIndexEntry } from "../components/BlogPostIndex.tsx";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
-import Box from "@mui/material/Box";
+import BackToProjects from "../components/projects/BackToProjects.tsx";
+import PageContainer from "../components/PageContainer.tsx";
 
 export default function BlogPost() {
     const {postId} = useParams();
     const [blogPostData, setBlogPostData] = useState<BlogPostIndexEntry | undefined>(undefined);
+    const location = useLocation();
+    const {projectCardId}: { projectCardId: string | undefined } = location.state || {};
 
     useEffect(() => {
         if (postId === undefined) {
@@ -20,10 +23,11 @@ export default function BlogPost() {
     }
 
     return (<>
-        <Box component="main" sx={{p: 3}}>
+        <BackToProjects backToProject={projectCardId}/>
+        <PageContainer>
             <h1>{blogPostData?.title}</h1>
             <sub>{blogPostData?.date}</sub>
             <Markdown>{blogPostData?.content}</Markdown>
-        </Box>
+        </PageContainer>
     </>)
 }

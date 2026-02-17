@@ -9,14 +9,14 @@ import { useTranslation } from "react-i18next";
 import LanguageSelectMenu from "./LanguageSelectMenu.tsx";
 
 const navItems = [
-    { link: '/', name: 'nav.home' },
-    { link: '/blog', name: 'nav.blog' },
-    { link: '/about', name: 'nav.about' },
-    { link: '/projects', name: 'nav.projects' }
+    {link: '/', name: 'nav.home'},
+    {link: '/blog', name: 'nav.blog'},
+    {link: '/about', name: 'nav.about'},
+    {link: '/projects', name: 'nav.projects'}
 ];
 
 export default function Nav() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <Box sx={{display: 'flex'}}>

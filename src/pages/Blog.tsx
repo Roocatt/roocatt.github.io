@@ -1,9 +1,9 @@
 import { Card, Stack, styled } from "@mui/material";
-import Box from "@mui/material/Box";
 import BlogPostIndex from "../components/BlogPostIndex.tsx";
 import type { StyledComponent } from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PageContainer from "../components/PageContainer.tsx";
 
 const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
     backgroundColor: theme.palette.secondary.main,
@@ -17,7 +17,7 @@ export default function Blog() {
     const { t } = useTranslation();
 
     return (<>
-            <Box component="main" sx={{p: 3}}>
+            <PageContainer>
                 <h1>{t('page.blog.title')}</h1>
                 <Stack spacing={2}>
                     {Object.entries(BlogPostIndex).map((postIndex) => {
@@ -33,7 +33,7 @@ export default function Blog() {
                         );
                     })}
                 </Stack>
-            </Box>
+            </PageContainer>
         </>
     )
 }
