@@ -1,46 +1,43 @@
-import Nav from "./components/top-bar/Nav.tsx";
-import { Container, Fab, styled } from "@mui/material";
-import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
+import NavBar from "./components/NavBar.tsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Projects from "./pages/Projects.tsx";
+import About from "./pages/About.tsx";
+import Home from "./pages/Home.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Footer from "./components/bottom-bar/Footer.tsx";
-import ScrollTop from "./components/ScrollTop.tsx";
-import Background from "./components/background.tsx";
+import { ScrollTopAnchor } from "./components/ScrollProgress.tsx";
 
-const Offset = styled('div')(
-    ({theme}) => theme.mixins.toolbar
-);
-
-export default function App() {
+function App() {
     return (
         <>
+            <ScrollTopAnchor/>
+            <div className="title-bar site-banner">
+                <div className="title-bar-text site-banner-text">My Personal Site</div>
+                <div className="title-bar-controls">
+                    <button aria-label="Ignore" className="minimize"></button>
+                    <button aria-label="Ignore" className="maximize"></button>
+                    <button aria-label="Ignore" className="close"></button>
+                </div>
+            </div>
             <BrowserRouter>
-                <Nav/>
-                <a id="scroll-top-anchor"/>
-                <Background/>
-                <Container sx={{minHeight: '100vh'}}>
-                    <Offset/>
-                    <Container maxWidth="md" sx={{flexGrow: 1}}>
-                        <Routes>
-                            <Route path="/" element={<Home/>}/>
-                            <Route path="/blog" element={<Blog/>}/>
-                            <Route path="/about" element={<About/>}/>
-                            <Route path="/projects" element={<Projects/>}/>
-                            <Route path="/blog-post/:postId" element={<BlogPost/>}/>
-                        </Routes>
-                    </Container>
-                </Container>
-                <ScrollTop>
-                    <Fab size="small" aria-label="scroll back to top" color="secondary">
-                        <KeyboardArrowUpIcon/>
-                    </Fab>
-                </ScrollTop>
-                <Footer/>
+                <div className={'top-overflow-container'}/>
+                <div className={'right-overflow-container'}/>
+                <div className={'view-container'}/>
+                <div className={'nav-container'}>
+                    <NavBar/>
+                </div>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/blog" element={<Blog/>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route path="/projects" element={<Projects/>}/>
+                        <Route path="/blog-post/:postId" element={<BlogPost/>}/>
+                    </Routes>
+                </main>
             </BrowserRouter>
         </>
     )
 }
+
+export default App

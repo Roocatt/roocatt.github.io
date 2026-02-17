@@ -1,39 +1,29 @@
-import { Card, Stack, styled } from "@mui/material";
-import BlogPostIndex from "../components/BlogPostIndex.tsx";
-import type { StyledComponent } from "@emotion/styled";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import PageContainer from "../components/PageContainer.tsx";
+import BlogPostIndex, { BlogPostListItem } from "../components/BlogPosts.tsx";
+import { useNavigate } from "react-router-dom";
+import PageTitle from "../components/PageTitle.tsx";
+import PageBodyContainer from "../components/PageBodyContainer.tsx";
 
-const BlogPostListItem: StyledComponent<any> = styled(Card)(({theme}) => ({
-    backgroundColor: theme.palette.secondary.main,
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: (theme.vars ?? theme).palette.secondary.contrastText,
-}));
 
-export default function Blog() {
-    const { t } = useTranslation();
-
+const Blog = () => {
+    const navigate = useNavigate();
+    const handleClick = (destination: string) => {
+        navigate(destination);
+    };
     return (<>
-            <PageContainer>
-                <h1>{t('page.blog.title')}</h1>
-                <Stack spacing={2}>
-                    {Object.entries(BlogPostIndex).map((postIndex) => {
-                        const [postId, post] = postIndex;
-                        return (
-                            <Link key={'blog-post-link-' + postId} to={'/blog-post/' + postId} style={{ textDecoration: 'none' }}>
-                            <BlogPostListItem key={post.title}>
-                                <h2>{post.title}</h2>
-                                <sub>{post.date}</sub>
-                                <p>{post.description}</p>
-                            </BlogPostListItem>
-                            </Link>
-                        );
-                    })}
-                </Stack>
-            </PageContainer>
-        </>
-    )
+        <PageTitle>Blog</PageTitle>
+        <PageBodyContainer>
+            <div className={'blog-container'}>
+                {Object.entries(BlogPostIndex).map((postIndex) => {
+                    const [postId, post] = postIndex;
+                    return (
+                        <BlogPostListItem key={post.title} itemDetails={post} onClick={() => {
+                            handleClick('/blog-post/' + postId)
+                        }}/>
+                    );
+                })}
+            </div>
+        </PageBodyContainer>
+    </>)
 }
+
+export default Blog

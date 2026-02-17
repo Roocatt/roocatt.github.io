@@ -1,0 +1,189 @@
+.page-title {
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+.site-banner {
+    width: calc(100vw - 22px);
+    position: fixed;
+    x: 0;
+    y: 0;
+    z-index: 1000;
+    top: 0;
+}
+
+.site-banner-text {
+    padding-left: 8px;
+}
+
+.page-title-divider {
+    margin-left: 0;
+    margin-right: 40px;
+    margin-bottom: 2rem;
+    width: calc(100vw - 280px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #c0c0c0;
+    width: calc(100vw - 16px);
+    overflow-x: scroll;
+    overflow-y: scroll;
+    font-size: 1rem;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+}
+
+nav {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: stretch;
+    z-index: 2000;
+}
+
+.nav-container {
+    position: fixed;
+    top: 24px;
+    background: #c0c0c0;
+    z-index: 1900;
+    width: 220px;
+    height: 100vh;
+}
+
+.right-overflow-container {
+    position: fixed;
+    top: 24px;
+    right: 0;
+    background: #c0c0c0;
+    z-index: 1900;
+    width: 10px;
+    height: 100vh;
+}
+
+.top-overflow-container {
+    position: fixed;
+    top: 22px;
+    left: 0;
+    background: #c0c0c0;
+    z-index: 1900;
+    width: 100vw;
+    height: 6px;
+}
+
+nav .tree-view {
+    width: 100%;
+    overflow-y: scroll;
+    font-size: 18px;
+}
+
+main {
+    width: 65rem;
+    margin-left: 240px;
+    margin-bottom: 60px;
+}
+
+.page-container {
+    width: calc(100vw - 280px);
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+}
+
+.blog-post-scroll {
+    position: fixed;
+    bottom: 0;
+    left: 240px;
+    width: calc(100vw - 280px);
+    background-color: #c0c0c0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+.progress-indicator-container {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.progress-indicator {
+    width: 100%;
+}
+
+.progress-indicator-scroll-button {
+    margin-left: 1rem;
+    width: 100px
+}
+
+.about-tab-window {
+    height: 100%;
+    margin-bottom: 8px;
+
+}
+
+.about-window-body {
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+h4 {
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+}
+
+button,
+label,
+input,
+legend,
+textarea,
+select,
+option,
+table,
+ul.tree-view,
+.window,
+.title-bar,
+li[role=tab] {
+    font-size: 1rem;
+}
+
+table > thead > tr > * {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+pre {
+    font-size: 1rem;
+    background: var(--surface);
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+    padding: 8px;
+}
+
+.blog-window {
+    position: relative;
+    height: 100%;
+}
+
+.blog-window-status {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 4px;
+    width: calc(100% - 6px);
+}
+
+.view-container {
+    position: fixed;
+    top: 0;
+    margin-left: 220px;
+    margin-top: 28px;
+    width: calc(100vw - 246px);
+    height: calc(100vh - 52px);
+    box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
+    z-index: 3000;
+}
