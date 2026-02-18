@@ -42,7 +42,7 @@ const ScrollProgress = () => {
         <div className={'progress-indicator-container'}>
             <div ref={elementRef} className="progress-indicator">
                 <span className="progress-indicator-bar"
-                      style={{width: useScrollPercentage() + '%'}}/>
+                      style={{width: Math.round(Math.round(useScrollPercentage()) / 5) * 5 + '%'}}/>
             </div>
             <button className={'progress-indicator-scroll-button'}
                     disabled={useScrollPercentage() < 10}

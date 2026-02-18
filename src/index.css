@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Departure Mono';
+    src: local('Departure Mono'),
+    url('./assets/vendor/departure-mono/DepartureMono-Regular.woff2') format('woff2'),
+    url('./assets/vendor/departure-mono/DepartureMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .page-title {
     font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
     margin-bottom: 0;
@@ -159,10 +169,16 @@ table > thead > tr > * {
 }
 
 pre {
+    font-family: Departure Mono, monospace;
     font-size: 1rem;
     background: var(--surface);
     box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
     padding: 8px;
+}
+
+code {
+    font-family: Departure Mono, monospace;
+    font-size: 14px;
 }
 
 .blog-window {
@@ -186,4 +202,5 @@ pre {
     height: calc(100vh - 52px);
     box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
     z-index: 3000;
+    pointer-events: none;
 }

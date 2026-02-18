@@ -1,15 +1,16 @@
-import { useEffect, useId, useState } from "react";
+import { type Dispatch, type SetStateAction, useEffect, useId, useState } from "react";
 import PageBodyContainer from "../components/PageBodyContainer.tsx";
 import PageTitle from "../components/PageTitle.tsx";
 import Markdown from "react-markdown";
 import remarkGfm from 'remark-gfm';
+import emoji from 'remark-emoji';
 import { AboutTabMarkdownLoader } from "../util/markdown.tsx";
 
 interface TabComponentProps {
     id: string;
     label: string;
     isSelected: boolean;
-    onSelect: React.Dispatch<React.SetStateAction<string>>;
+    onSelect: Dispatch<SetStateAction<string>>;
 }
 
 const TabComponent = ({id, label, isSelected, onSelect}: TabComponentProps) => {
@@ -22,7 +23,7 @@ const TabComponent = ({id, label, isSelected, onSelect}: TabComponentProps) => {
             aria-selected={isSelected} // Value is controlled by React state
             onClick={() => onSelect(id)}
             role="tab">
-            <a href="#tabs">{label}</a>
+            <a href="#">{label}</a>
         </li>
     );
 };
@@ -39,8 +40,7 @@ const About = () => {
 
     const tabData = [
         {id: 'about-tab-the-basics', label: 'The Basics'},
-        {id: 'about-tab-professional-software', label: 'Professional - Software'},
-        {id: 'about-tab-professional-infrastructure', label: 'Professional - Infrastructure'},
+        {id: 'about-tab-professional', label: 'Professional'},
         {id: 'about-tab-hobbies-personal', label: 'Hobbies and Personal'},
         {id: 'about-tab-this-site', label: 'This Site'}
     ];
@@ -63,7 +63,7 @@ const About = () => {
             </menu>
             <div className="window about-tab-window" role="tabpanel">
                 <div className="window-body about-window-body">
-                    <Markdown remarkPlugins={[remarkGfm]}>{aboutTabData}</Markdown>
+                    <Markdown remarkPlugins={[remarkGfm,emoji]}>{aboutTabData}</Markdown>
                 </div>
             </div>
         </PageBodyContainer>

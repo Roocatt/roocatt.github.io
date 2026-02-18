@@ -3,7 +3,9 @@
 This site is built using TypeScript with React + Vite. The cool Windows 98
 styling is from [98.css](https://github.com/jdan/98.css) with some
 overrides in this site's CSS to make the styling more suited for my
-purposes.
+purposes. You can find the source for this site on
+[GitHub](https://github.com/Roocatt/roocatt.github.io) if you're
+curious.
 
 Several bits of writing (including this one) are done using Markdown, and
 React plugins to automatically load and build HTML from those Markdown
