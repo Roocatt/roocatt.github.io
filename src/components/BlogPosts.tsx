@@ -17,35 +17,11 @@ const defaultStr = () => {
 const markdownData: Map<string, () => Promise<MDLoad>> = BlogPostMarkdownLoader();
 
 const BlogPostIndex: Record<string, BlogPostIndexEntry> = {
-    'blog-post-1': {
-        title: "Blog Post 1",
-        date: "2026-01-22",
-        description: "This is a blog post.",
-        content: markdownData.get('2026-01-22-Test-Post') ?? defaultStr()
-    },
-    'blog-post-2': {
-        title: "Blog Post 2",
-        date: "2026-02-14",
-        description: "This is another blog post.",
-        content: markdownData.get('2026-02-14-Test-Post') ?? defaultStr()
-    },
-    'blog-post-3': {
-        title: "Blog Post 3",
-        date: "2026-02-16",
-        description: "This yet another blog post with a longer description to see if that causes any problems.",
-        content: markdownData.get('2026-02-16-Test-Post') ?? defaultStr()
-    },
-    'blog-post-4': {
-        title: "Blog Post 4",
-        date: "2026-02-17",
-        description: "This yet another blog post with a longer description to see if that causes any problems.",
-        content: markdownData.get('2026-02-16-Test-Post') ?? defaultStr()
-    },
-    'blog-post-5': {
-        title: "Blog Post 5",
-        date: "2026-02-18",
-        description: "This yet another blog post with a longer description to see if that causes any problems.",
-        content: markdownData.get('2026-02-16-Test-Post') ?? defaultStr()
+    'first-post': {
+        title: "Building my New Website",
+        date: "2026-02-19",
+        description: "My first blog post on my new personal site.",
+        content: markdownData.get('2026-02-19-First-Post') ?? defaultStr()
     },
 };
 

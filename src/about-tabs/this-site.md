@@ -11,6 +11,11 @@ Several bits of writing (including this one) are done using Markdown, and
 React plugins to automatically load and build HTML from those Markdown
 documents.
 
+The image used on the main page is from a game asset bundle under
+the Creative Commons Zero (CC0) licence, and was created by Luis
+Zuno (aka Ansimuz). See their [itch.io](https://ansimuz.itch.io/)
+page for more from them.
+
 ```
 But, Roos, why did you make your site look like an almost 30 year old
 operating system that came out when you were 2 years old?

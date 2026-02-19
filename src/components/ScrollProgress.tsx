@@ -38,11 +38,17 @@ const ScrollProgress = () => {
         }
     };
 
+    /* This makes the bar move in chunks for a more win98 feel. */
+    let percentMath = Math.round(Math.round(useScrollPercentage()) / 5) * 5;
+    if (percentMath > 100) {
+        percentMath = 100;
+    }
+
     return (<>
         <div className={'progress-indicator-container'}>
             <div ref={elementRef} className="progress-indicator">
                 <span className="progress-indicator-bar"
-                      style={{width: Math.round(Math.round(useScrollPercentage()) / 5) * 5 + '%'}}/>
+                      style={{width: percentMath + '%'}}/>
             </div>
             <button className={'progress-indicator-scroll-button'}
                     disabled={useScrollPercentage() < 10}

@@ -99,6 +99,7 @@ main {
 
 .page-container {
     width: calc(100vw - 280px);
+    margin-bottom: 6rem;
 }
 
 .blog-container {
@@ -203,4 +204,8 @@ code {
     box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
     z-index: 3000;
     pointer-events: none;
+}
+
+.home-bg-image {
+    width: calc(100vw - 280px);
 }

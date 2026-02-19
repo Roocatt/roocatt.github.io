@@ -3,19 +3,18 @@ import { createRoot } from 'react-dom/client'
 import '98.css'
 import './index.css'
 import App from './App.tsx'
-import UnderDevelopmentApp from "./UnderDevelopmentApp.tsx";
+/*import UnderDevelopmentApp from "./UnderDevelopmentApp.tsx";*/
 
-/* Temporary condition to just render the actual page in development. */
-if (import.meta.env.DEV) {
+/*if (import.meta.env.DEV) {*/
     createRoot(document.getElementById('root')!).render(
         <StrictMode>
                 <App/>
         </StrictMode>
     )
-} else {
+/*} else {
     createRoot(document.getElementById('root')!).render(
         <StrictMode>
             <UnderDevelopmentApp/>
         </StrictMode>
     )
-}
+}*/

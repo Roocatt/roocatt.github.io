@@ -5,6 +5,8 @@ import BlogPostIndex, { type BlogPostIndexEntry } from "../components/BlogPosts.
 import PageTitle from "../components/PageTitle.tsx";
 import PageBodyContainer from "../components/PageBodyContainer.tsx";
 import ScrollProgress from "../components/ScrollProgress.tsx";
+import remarkGfm from "remark-gfm";
+import emoji from "remark-emoji";
 
 
 export default function BlogPost() {
@@ -38,7 +40,7 @@ export default function BlogPost() {
         <PageTitle>{blogPostData?.title}</PageTitle>
         <sub>{blogPostData?.date}</sub>
         <PageBodyContainer>
-            <Markdown>{blogPostContent}</Markdown>
+            <Markdown remarkPlugins={[remarkGfm,emoji]}>{blogPostContent}</Markdown>
         </PageBodyContainer>
         <div className={'blog-post-scroll'}>
             <ScrollProgress/>
