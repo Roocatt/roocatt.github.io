@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Departure Mono';
     src: local('Departure Mono'),
-    url('./assets/vendor/departure-mono/DepartureMono-Regular.woff2') format('woff2'),
-    url('./assets/vendor/departure-mono/DepartureMono-Regular.woff') format('woff');
+    url('../assets/vendor/departure-mono/DepartureMono-Regular.woff2') format('woff2'),
+    url('../assets/vendor/departure-mono/DepartureMono-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -14,7 +14,6 @@
 }
 
 .site-banner {
-    width: calc(100vw - 22px);
     position: fixed;
     x: 0;
     y: 0;
@@ -30,7 +29,6 @@
     margin-left: 0;
     margin-right: 40px;
     margin-bottom: 2rem;
-    width: calc(100vw - 230px);
 }
 
 body {
@@ -42,27 +40,6 @@ body {
     overflow-y: scroll;
     font-size: 1rem;
     font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
-}
-
-nav {
-    width: 150px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    padding: 8px;
-    margin-top: 20px;
-    display: flex;
-    align-items: stretch;
-    z-index: 2000;
-}
-
-.nav-container {
-    position: fixed;
-    top: 24px;
-    background: #c0c0c0;
-    z-index: 1900;
-    width: 170px;
-    height: 100vh;
 }
 
 .right-overflow-container {
@@ -93,12 +70,10 @@ nav .tree-view {
 
 main {
     width: 65rem;
-    margin-left: 190px;
     margin-bottom: 60px;
 }
 
 .page-container {
-    width: calc(100vw - 230px);
     margin-bottom: 6rem;
 }
 
@@ -107,30 +82,6 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 2rem;
-}
-
-.blog-post-scroll {
-    position: fixed;
-    bottom: 0;
-    left: 190px;
-    width: calc(100vw - 230px);
-    background-color: #c0c0c0;
-    padding-bottom: 8px;
-    padding-top: 8px;
-}
-
-.progress-indicator-container {
-    display: flex;
-    margin-bottom: 16px;
-}
-
-.progress-indicator {
-    width: 100%;
-}
-
-.progress-indicator-scroll-button {
-    margin-left: 1rem;
-    width: 100px
 }
 
 .about-tab-window {
@@ -199,13 +150,8 @@ code {
     top: 0;
     margin-left: 170px;
     margin-top: 28px;
-    width: calc(100vw - 196px);
     height: calc(100vh - 52px);
     box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
     z-index: 3000;
     pointer-events: none;
-}
-
-.home-bg-image {
-    width: calc(100vw - 230px);
 }

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 const useScrollPercentage = () => {
     const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -44,6 +45,11 @@ const ScrollProgress = () => {
         percentMath = 100;
     }
 
+
+    if (isMobile) {
+        return null;
+    }
+
     return (<>
         <div className={'progress-indicator-container'}>
             <div ref={elementRef} className="progress-indicator">
@@ -51,7 +57,7 @@ const ScrollProgress = () => {
                       style={{width: percentMath + '%'}}/>
             </div>
             <button className={'progress-indicator-scroll-button'}
-                    disabled={useScrollPercentage() < 10}
+                    disabled={percentMath < 10}
                     onClick={handleClick}>
                 Scroll Up
             </button>
