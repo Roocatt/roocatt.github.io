@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar.tsx";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Projects from "./pages/Projects.tsx";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
@@ -19,7 +19,7 @@ function MobileApp() {
                     <button aria-label="Ignore" className="close"></button>
                 </div>
             </div>
-            <BrowserRouter>
+            <HashRouter>
                 <div className={'nav-container'}>
                     <NavBar/>
                 </div>
@@ -32,7 +32,7 @@ function MobileApp() {
                         <Route path="/blog-post/:postId" element={<BlogPost/>}/>
                     </Routes>
                 </main>
-            </BrowserRouter>
+            </HashRouter>
         </>
     )
 }

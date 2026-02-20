@@ -23,7 +23,7 @@ const TabComponent = ({id, label, isSelected, onSelect}: TabComponentProps) => {
             aria-selected={isSelected} // Value is controlled by React state
             onClick={() => onSelect(id)}
             role="tab">
-            <a href="#">{label}</a>
+            <a className={'about-tab-link'}>{label}</a>
         </li>
     );
 };
