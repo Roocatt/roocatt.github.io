@@ -30,7 +30,7 @@
     margin-left: 0;
     margin-right: 40px;
     margin-bottom: 2rem;
-    width: calc(100vw - 280px);
+    width: calc(100vw - 230px);
 }
 
 body {
@@ -45,7 +45,7 @@ body {
 }
 
 nav {
-    width: 200px;
+    width: 150px;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -61,7 +61,7 @@ nav {
     top: 24px;
     background: #c0c0c0;
     z-index: 1900;
-    width: 220px;
+    width: 170px;
     height: 100vh;
 }
 
@@ -93,12 +93,12 @@ nav .tree-view {
 
 main {
     width: 65rem;
-    margin-left: 240px;
+    margin-left: 190px;
     margin-bottom: 60px;
 }
 
 .page-container {
-    width: calc(100vw - 280px);
+    width: calc(100vw - 230px);
     margin-bottom: 6rem;
 }
 
@@ -112,8 +112,8 @@ main {
 .blog-post-scroll {
     position: fixed;
     bottom: 0;
-    left: 240px;
-    width: calc(100vw - 280px);
+    left: 190px;
+    width: calc(100vw - 230px);
     background-color: #c0c0c0;
     padding-bottom: 8px;
     padding-top: 8px;
@@ -197,9 +197,9 @@ code {
 .view-container {
     position: fixed;
     top: 0;
-    margin-left: 220px;
+    margin-left: 170px;
     margin-top: 28px;
-    width: calc(100vw - 246px);
+    width: calc(100vw - 196px);
     height: calc(100vh - 52px);
     box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
     z-index: 3000;
@@ -207,5 +207,5 @@ code {
 }
 
 .home-bg-image {
-    width: calc(100vw - 280px);
+    width: calc(100vw - 230px);
 }
