@@ -23,6 +23,12 @@ const BlogPostIndex: Record<string, BlogPostIndexEntry> = {
         description: "My first blog post on my new personal site.",
         content: markdownData.get('2026-02-19-First-Post') ?? defaultStr()
     },
+    'netbsd-pi400': {
+        title: "Installing NetBSD on a Raspberry Pi 400",
+        date: "2026-03-01",
+        description: "Installing NetPSD on a Raspberry Pi 400 in 2026",
+        content: markdownData.get('2026-03-01-NetBSD-on-a-pi400') ?? defaultStr()
+    }
 };
 
 interface BlogPostListItemProps {

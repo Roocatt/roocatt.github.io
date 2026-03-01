@@ -159,3 +159,8 @@ code {
     z-index: 3000;
     pointer-events: none;
 }
+
+img {
+    max-width: 100%;
+    padding-right: 18px;
+}

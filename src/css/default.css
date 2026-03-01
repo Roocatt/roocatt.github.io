@@ -46,6 +46,7 @@ main {
 
 .home-bg-image {
     width: calc(100vw - 230px);
+    max-width: unset;
 }
 
 .blog-post-scroll {
